@@ -1,0 +1,22 @@
+{
+  "name": "primo-camera",
+  "version": "0.0.0",
+  "description": "Camera system on top of canvas for PrimoJS",
+  "main": "camera.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/robashton/primo-camera.git"
+  },
+  "keywords": [
+    "camera",
+    "html5",
+    "canvas",
+    "game",
+    "primo"
+  ],
+  "author": "Rob Ashton",
+  "license": "MIT"
+}
