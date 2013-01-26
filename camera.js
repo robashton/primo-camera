@@ -17,6 +17,13 @@ var Camera = function(context, settings) {
 }
 
 Camera.prototype = {
+  isVisible: function(x, y, width, height) {
+    if(x > this.viewport.right) return false
+    if(y > this.viewport.bottom) return false
+    if(x + width < this.viewport.left) return false
+    if(y + height < this.viewport.top) return false
+    return true
+  },
   begin: function() {
     this.context.save()
     this.applyScale()
@@ -56,7 +63,7 @@ Camera.prototype = {
     this.lookat[1] = y
     this.updateViewport()
   },
-  screenToWorld: function(x, y, obj) {
+  canvasToWorld: function(x, y, obj) {
     obj = obj || {}
     x -= this.context.canvas.offsetLeft
     y -= this.context.canvas.offsetTop
@@ -64,7 +71,7 @@ Camera.prototype = {
     obj.worldy = (y / this.viewport.scale[1]) + this.viewport.top
     return obj
   },
-  worldToScreen: function(x, y, obj) {
+  worldToCanvas: function(x, y, obj) {
     obj = obj || {}
     obj.screenx = (x - this.viewport.left) * (this.viewport.scale[0])
     obj.screeny = (y - this.viewport.top) * (this.viewport.scale[1])
