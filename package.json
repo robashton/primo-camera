@@ -1,6 +1,6 @@
 {
   "name": "primo-camera",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Camera system on top of canvas for PrimoJS",
   "main": "camera.js",
   "scripts": {
